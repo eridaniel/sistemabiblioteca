@@ -1,16 +1,21 @@
 # Usar una imagen oficial de PHP con Apache
-FROM php:8.1-apache
+FROM php:8.0-apache
 
 # Instalar extensiones necesarias para Laravel
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
+    libonig-dev \
+    libzip-dev \
     zip \
     unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd \
-    && docker-php-ext-install pdo_mysql mbstring
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install mbstring \
+    && docker-php-ext-install zip \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 # Instalar Composer
 COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
 
