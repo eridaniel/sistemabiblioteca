@@ -20,7 +20,7 @@
         <div class="col-md-4">
         <form action="{{ route('libros') }}" method="GET" class="d-flex">
             <select name="categoria" id="cateogria" class="form-control me-2" onchange="this.form.submit()">
-                <option value="">Todas las Categorías</option>
+                <option value="">Todas</option>
                 @foreach ($categorias as $categoria)
                 <option value="{{ $categoria->id }}" {{ request('categoria') == $categoria->id ? 'selected' : '' }}>
                     {{ $categoria->nombre }}

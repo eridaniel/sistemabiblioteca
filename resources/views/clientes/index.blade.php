@@ -13,9 +13,9 @@
         <div class="container">
             <div class="row mb-2">
                 <div class="col-md-8">
-                    @if(Auth::check() && Auth::user()->role && Auth::user()->role->name === 'admin')
+                    
                         <a href="{{url('clientes/create')}}" class="btn btn-outline-primary btn-sm-2">Agregar Cliente</a>
-                    @endif
+                   
                 </div>
                 <div class="col-md-4">
                     <form action="{{ route('clientes') }}" method="GET" class="d-flex">

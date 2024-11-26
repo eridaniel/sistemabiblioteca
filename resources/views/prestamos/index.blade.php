@@ -13,9 +13,7 @@
     <div class="container">
     <div class="row mb-2">
         <div class="col-md-8">
-        @if(Auth::check() && Auth::user()->role && Auth::user()->role->name === 'admin')
             <a href="{{route('prestamos.create')}}" class="btn btn-outline-primary btn-sm-2">Registrar Préstamo</a>
-        @endif
         </div>
         <div class="col-md-4">
         <ul class="navbar-nav ms-auto">
