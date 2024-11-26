@@ -1,0 +1,21 @@
+[build]
+  publish = "public"
+  command = "composer install && php artisan config:cache"
+
+[[plugins]]
+  package = "@netlify/plugin-php"
+
+[context.production.environment]
+  
+  PHP_VERSION = "^8.2"
+  APP_KEY = "base64:9tX9H+JjcxS4yDKGr0Xrs+37764RK+Sq0rLBryd+HcE="
+  DB_CONNECTION = "mysql"
+  DB_HOST = "127.0.0.1"
+  DB_PORT = "3306"
+  DB_DATABASE = "sistemabiblioteca"
+  DB_USERNAME = "root"
+  DB_PASSWORD = ""
+
+[context.deploy-preview.environment]
+  
+  PHP_VERSION = "^8.2"
